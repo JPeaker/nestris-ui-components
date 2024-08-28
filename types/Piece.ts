@@ -1,14 +1,14 @@
-enum PieceType {
-  O,
-  I,
+enum Tetrimino {
   T,
-  S,
-  Z,
-  L,
   J,
+  Z,
+  O,
+  S,
+  L,
+  I,
 }
 
-enum PieceOrientation {
+enum Orientation {
   Up,
   Right,
   Down,
@@ -16,13 +16,10 @@ enum PieceOrientation {
 }
 
 type Piece = {
-  type: PieceType;
-  orientation: PieceOrientation;
+  type: Tetrimino;
+  orientation: Orientation;
 };
 
-type PotentialPiece = {
-  piece: Piece;
-  row: number;
-  column: number;
-  opacity: number;
-};
+export { Tetrimino, Orientation };
+
+export type { Piece };
