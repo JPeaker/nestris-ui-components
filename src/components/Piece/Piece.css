@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.block.invisible {
+  opacity: 0;
+}

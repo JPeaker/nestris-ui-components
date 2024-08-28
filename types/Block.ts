@@ -1,1 +1,5 @@
-type Block = 0 | 1 | 2;
+export enum Block {
+  Block0,
+  Block1,
+  Block2,
+}
