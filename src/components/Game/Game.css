@@ -1,3 +1,7 @@
+.stack {
+  background-color: black;
+}
+
 .row {
   display: flex;
   width: 100%;
