@@ -7,20 +7,22 @@
   width: 10%;
 }
 
+.block.block-column-1 {
+  width: 100%;
+}
+
+.block.block-column-2 {
+  width: 50%;
+}
+
+.block.block-column-3 {
+  width: 33.3333333333333333333333%;
+}
+
+.block.block-column-4 {
+  width: 25%;
+}
+
 .block.invisible {
   opacity: 0;
-}
-
-.current-piece {
-  position: absolute;
-  top: 160px;
-  left: 478px;
-  width: 316px;
-}
-
-.next-piece {
-  position: absolute;
-  top: 460px;
-  left: 767px;
-  width: 316px;
 }

@@ -1,7 +1,7 @@
-import { Piece, Tetrimino } from "../../../types/Piece";
+import { Orientation, Piece, Tetrimino } from "../../../types/Piece";
 
-export const printPieceTetrimino = (piece: Piece) => {
-  switch (piece.type) {
+export const printTetrimino = (tetrimino: Tetrimino) => {
+  switch (tetrimino) {
     case Tetrimino.T:
       return "T";
     case Tetrimino.J:
@@ -21,8 +21,8 @@ export const printPieceTetrimino = (piece: Piece) => {
   }
 };
 
-export const printPieceOrientation = (piece: Piece) => {
-  switch (piece.orientation) {
+export const printOrientation = (orientation: Orientation) => {
+  switch (orientation) {
     case 0:
       return "Up";
     case 1:
@@ -37,5 +37,5 @@ export const printPieceOrientation = (piece: Piece) => {
 };
 
 export const printPiece = (piece: Piece) => {
-  return `Type: ${printPieceTetrimino(piece)}, Orientation: ${printPieceOrientation(piece)}`;
+  return `Type: ${printTetrimino(piece.type)}, Orientation: ${printOrientation(piece.orientation)}`;
 };

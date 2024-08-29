@@ -1,0 +1,38 @@
+.next-piece {
+  position: absolute;
+}
+
+.next-piece-column-1 {
+  width: 32px;
+}
+
+.next-piece-column-2 {
+  width: 64px;
+}
+
+.next-piece-column-3 {
+  width: 96px;
+}
+
+.next-piece-column-4 {
+  width: 128px;
+}
+
+.next-piece-T,
+.next-piece-L,
+.next-piece-J,
+.next-piece-S,
+.next-piece-Z {
+  top: 450px;
+  left: 780px;
+}
+
+.next-piece-O {
+  top: 448px;
+  left: 798px;
+}
+
+.next-piece-I {
+  top: 454px;
+  left: 766px;
+}

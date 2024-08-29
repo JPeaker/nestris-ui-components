@@ -2,7 +2,6 @@ import blockMap from "./block-map";
 import classNames from "classnames";
 import "./Piece.css";
 import { Orientation, Tetrimino } from "../../../types/Piece";
-import blockImageMap from "../../services/block-image-map";
 import getBlockImage from "../../services/block-image-map";
 import { Level } from "../../../types/Level";
 
@@ -13,7 +12,10 @@ export interface PieceProps {
   className?: string;
 }
 
-const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
+export const getPieceGrid = (
+  tetrimino: Tetrimino,
+  orientation: Orientation
+) => {
   const { blocks, color } = blockMap[tetrimino][orientation];
 
   if (!blocks) {
@@ -33,6 +35,13 @@ const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
     grid[y - pieceMinY][x - pieceMinX] = color;
   });
 
+  return { grid, color };
+};
+
+const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
+  const { grid, color } = getPieceGrid(tetrimino, orientation);
+
+  const columns = Math.max(...grid.map((row) => row.length));
   return (
     <div className={className}>
       {grid.map((row, y) => (
@@ -42,6 +51,7 @@ const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
               src={getBlockImage(color, level || 18)}
               className={classNames({
                 block: true,
+                [`block-column-${columns}`]: true,
                 invisible: value === null,
               })}
               key={`${y}${x}`}

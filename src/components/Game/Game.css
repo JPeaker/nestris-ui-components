@@ -12,16 +12,3 @@
 
   background-color: black;
 }
-
-.row {
-  display: flex;
-  width: 100%;
-}
-
-.block {
-  width: 10%;
-}
-
-.block.invisible {
-  opacity: 0;
-}

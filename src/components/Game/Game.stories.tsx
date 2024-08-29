@@ -34,7 +34,7 @@ export const GameStory: StoryFn = (args) => (
     stack={args.stack || sampleStack}
     level={args.level || 18}
     currentPiece={Tetrimino.I}
-    nextPiece={Tetrimino.I}
+    nextPiece={Tetrimino.L}
     {...args}
   />
 );
