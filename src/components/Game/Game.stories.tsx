@@ -10,24 +10,24 @@ const meta = {
     layout: "fullscreen",
   },
   args: {
-    game: {
-      stack: sampleStack,
-    },
+    stack: sampleStack,
+    level: 18,
   },
   argTypes: {
-    game: {
+    stack: {
       control: {
         type: "object",
+      },
+    },
+    level: {
+      control: {
+        type: "number",
       },
     },
   },
 } satisfies Meta<typeof Game>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
-
 export const GameStory: StoryFn = (args) => (
-  <div style={{ width: "400px" }}>
-    <Game game={{ stack: sampleStack }} {...args} />
-  </div>
+  <Game stack={args.stack || sampleStack} level={args.level || 18} {...args} />
 );

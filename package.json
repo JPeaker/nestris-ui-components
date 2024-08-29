@@ -55,6 +55,7 @@
     "@storybook/react-webpack5": "^8.2.9",
     "@storybook/test": "^8.2.9",
     "eslint-plugin-storybook": "^0.8.0",
+    "file-loader": "^6.2.0",
     "prop-types": "^15.8.1",
     "storybook": "^8.2.9",
     "ts-loader": "^9.5.1",

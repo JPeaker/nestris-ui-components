@@ -1,4 +1,15 @@
+.game {
+  height: 895px;
+  width: 1024px;
+  background-image: url("../../images/background.png");
+}
+
 .stack {
+  position: absolute;
+  top: 168px;
+  left: 384px;
+  width: 316px;
+
   background-color: black;
 }
 

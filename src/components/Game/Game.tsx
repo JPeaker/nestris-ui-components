@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import { Cell, Game as GameType } from "../../../types/Game";
-import blockImageMap from "../../services/block-image-map";
+import getBlockImage from "../../services/block-image-map";
 import "./Game.css";
 
-const Game = ({ game }: { game: GameType }) => {
+const Game = ({ stack, level }: GameType) => {
+  const defaultedLevel = level || 18;
   return (
     <div className="game">
       <div className="stack">
-        {game.stack.map((row, y) => (
+        {stack.map((row, y) => (
           <div className="row" key={y}>
             {row.map((value: Cell, x) => (
               <img
-                src={blockImageMap[value || 0]}
+                src={getBlockImage(value || 0, defaultedLevel)}
                 className={classNames({
                   block: true,
                   invisible: value === null,
