@@ -3,13 +3,17 @@ import classNames from "classnames";
 import "./Piece.css";
 import { Orientation, Tetrimino } from "../../../types/Piece";
 import blockImageMap from "../../services/block-image-map";
+import getBlockImage from "../../services/block-image-map";
+import { Level } from "../../../types/Level";
 
 export interface PieceProps {
   tetrimino: Tetrimino;
   orientation: Orientation;
+  level?: Level;
+  className?: string;
 }
 
-const Piece = ({ tetrimino, orientation }: PieceProps) => {
+const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
   const { blocks, color } = blockMap[tetrimino][orientation];
 
   if (!blocks) {
@@ -29,20 +33,24 @@ const Piece = ({ tetrimino, orientation }: PieceProps) => {
     grid[y - pieceMinY][x - pieceMinX] = color;
   });
 
-  return grid.map((row, y) => (
-    <div className="row" key={y}>
-      {row.map((value, x) => (
-        <img
-          src={blockImageMap[color]}
-          className={classNames({
-            block: true,
-            invisible: value === null,
-          })}
-          key={`${y}${x}`}
-        />
+  return (
+    <div className={className}>
+      {grid.map((row, y) => (
+        <div className="row" key={y}>
+          {row.map((value, x) => (
+            <img
+              src={getBlockImage(color, level || 18)}
+              className={classNames({
+                block: true,
+                invisible: value === null,
+              })}
+              key={`${y}${x}`}
+            />
+          ))}
+        </div>
       ))}
     </div>
-  ));
+  );
 };
 
 export default Piece;

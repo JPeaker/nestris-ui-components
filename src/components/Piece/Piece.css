@@ -10,3 +10,17 @@
 .block.invisible {
   opacity: 0;
 }
+
+.current-piece {
+  position: absolute;
+  top: 160px;
+  left: 478px;
+  width: 316px;
+}
+
+.next-piece {
+  position: absolute;
+  top: 460px;
+  left: 767px;
+  width: 316px;
+}
