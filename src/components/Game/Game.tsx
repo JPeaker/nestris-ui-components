@@ -66,8 +66,19 @@ const Game = ({
                   className={classNames({
                     block: true,
                     invisible: value === null,
-                    "phantom-1": phantom === 1,
-                    "phantom-2": phantom === 2,
+                    "low-visibility": !!currentPiecePlacement && phantom === 0,
+                    "medium-visibility":
+                      !!currentPiecePlacement &&
+                      !!nextPiecePlacement &&
+                      phantom === 2,
+                    "high-visibility":
+                      (!currentPiecePlacement && !!nextPiecePlacement) ||
+                      (currentPiecePlacement &&
+                        !nextPiecePlacement &&
+                        phantom === 1) ||
+                      (!!currentPiecePlacement &&
+                        !!nextPiecePlacement &&
+                        phantom === 1),
                   })}
                   key={`${y}${x}`}
                 />

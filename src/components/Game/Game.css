@@ -13,10 +13,14 @@
   background-color: black;
 }
 
-.phantom-1 {
-  opacity: 65%;
+.low-visibility {
+  opacity: 0.4;
 }
 
-.phantom-2 {
-  opacity: 25%;
+.medium-visibility {
+  opacity: 0.8;
+}
+
+.high-visibility {
+  opacity: 1;
 }
