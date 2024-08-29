@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import { Orientation, Tetrimino } from "../../../types/Piece";
-import Piece, { getPieceGrid } from "../Piece/Piece";
+import Piece from "../Piece/Piece";
 import "./NextPiece.css";
 import { printTetrimino } from "../Piece/print-piece";
+import { getPieceGrid } from "../../services/piece-grid";
 
 const NextPiece = ({ tetrimino }: { tetrimino: Tetrimino }) => {
   const { grid } = getPieceGrid(tetrimino, Orientation.Down);

@@ -4,6 +4,7 @@ import "./Piece.css";
 import { Orientation, Tetrimino } from "../../../types/Piece";
 import getBlockImage from "../../services/block-image-map";
 import { Level } from "../../../types/Level";
+import { getPieceGrid } from "../../services/piece-grid";
 
 export interface PieceProps {
   tetrimino: Tetrimino;
@@ -11,32 +12,6 @@ export interface PieceProps {
   level?: Level;
   className?: string;
 }
-
-export const getPieceGrid = (
-  tetrimino: Tetrimino,
-  orientation: Orientation
-) => {
-  const { blocks, color } = blockMap[tetrimino][orientation];
-
-  if (!blocks) {
-    throw new Error("Invalid piece");
-  }
-  const pieceMinX = Math.min(...blocks.map(([x]) => x));
-  const pieceMaxX = Math.max(...blocks.map(([x]) => x));
-  const pieceMinY = Math.min(...blocks.map(([_, y]) => y));
-  const pieceMaxY = Math.max(...blocks.map(([_, y]) => y));
-  const pieceWidth = pieceMaxX - pieceMinX + 1;
-  const pieceHeight = pieceMaxY - pieceMinY + 1;
-
-  const grid = Array.from({ length: pieceHeight }, () =>
-    Array(pieceWidth).fill(null)
-  );
-  blocks.forEach(([x, y]) => {
-    grid[y - pieceMinY][x - pieceMinX] = color;
-  });
-
-  return { grid, color };
-};
 
 const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
   const { grid, color } = getPieceGrid(tetrimino, orientation);
@@ -48,7 +23,7 @@ const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
         <div className="row" key={y}>
           {row.map((value, x) => (
             <img
-              src={getBlockImage(color, level || 18)}
+              src={getBlockImage(color, level || 18).image}
               className={classNames({
                 block: true,
                 [`block-column-${columns}`]: true,
