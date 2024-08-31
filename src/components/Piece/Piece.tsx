@@ -1,4 +1,3 @@
-import blockMap from "./block-map";
 import classNames from "classnames";
 import "./Piece.css";
 import { Orientation, Tetrimino } from "../../../types/Piece";
@@ -23,6 +22,7 @@ const Piece = ({ tetrimino, orientation, className, level }: PieceProps) => {
         <div className="row" key={y}>
           {row.map((value, x) => (
             <img
+              alt=""
               src={getBlockImage(color, level || 18).image}
               className={classNames({
                 block: true,

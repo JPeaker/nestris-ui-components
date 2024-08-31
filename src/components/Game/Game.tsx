@@ -5,6 +5,7 @@ import { Orientation } from "../../../types/Piece";
 import { getPieceGrid, getPiecePlacementGrid } from "../../services/piece-grid";
 import NextPiece from "./NextPiece";
 import "./Game.css";
+import Level from "./Level";
 
 const Game = ({
   stack,
@@ -16,7 +17,7 @@ const Game = ({
 }: GameType) => {
   const clonedStack = stack.map((row) => row.slice());
   if (currentPiece !== undefined) {
-    if (currentPiecePlacement == undefined) {
+    if (currentPiecePlacement === undefined) {
       const { grid: currentPieceGrid, color: currentPieceColor } = getPieceGrid(
         currentPiece,
         Orientation.Down
@@ -90,6 +91,7 @@ const Game = ({
       {nextPiece !== undefined && !nextPiecePlacement ? (
         <NextPiece tetrimino={nextPiece} />
       ) : null}
+      {level !== undefined ? <Level level={level} /> : null}
     </div>
   );
 };

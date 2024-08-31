@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "PressStart2P";
+  src: url("../../../public/fonts/PressStart2P-vaV7.ttf") format("truetype");
+}
+
+.level {
+  position: absolute;
+  left: 770px;
+  top: 607px;
+
+  font-family: "PressStart2P";
+  font-size: 31px;
+  color: white;
+}
+
+.level__value {
+  margin-top: 2px;
+  margin-left: 61px;
+}
