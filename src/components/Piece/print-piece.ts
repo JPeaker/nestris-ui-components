@@ -1,4 +1,4 @@
-import { Orientation, Piece, Tetrimino } from "../../../types/Piece";
+import { Orientation, Piece, Tetrimino } from "../../types/Piece";
 
 export const printTetrimino = (tetrimino: Tetrimino) => {
   switch (tetrimino) {

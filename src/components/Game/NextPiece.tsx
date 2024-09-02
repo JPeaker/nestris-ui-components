@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Orientation, Tetrimino } from "../../../types/Piece";
+import { Orientation, Tetrimino } from "../../types/Piece";
 import Piece from "../Piece/Piece";
 import "./NextPiece.css";
 import { printTetrimino } from "../Piece/print-piece";

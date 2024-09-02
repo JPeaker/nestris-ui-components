@@ -1,4 +1,4 @@
-import type { Stack } from "../../../types/Game";
+import type { Stack } from "../../types/Game";
 
 const sampleStack: Stack = [
   [null, null, null, null, null, null, null, null, null, null],

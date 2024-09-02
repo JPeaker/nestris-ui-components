@@ -1,5 +1,5 @@
-import { Block, DoublePhantomBlock, PhantomBlock } from "../../types/Block";
-import { Level } from "../../types/Level";
+import { Block, DoublePhantomBlock, PhantomBlock } from "../types/Block";
+import { Level } from "../types/Level";
 
 const getBlockImage = (
   block: Block | PhantomBlock | DoublePhantomBlock,

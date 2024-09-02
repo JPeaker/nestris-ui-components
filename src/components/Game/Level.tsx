@@ -1,4 +1,4 @@
-import { Level as LevelType } from "../../../types/Level";
+import { Level as LevelType } from "../../types/Level";
 import "./Level.css";
 
 const Level = ({ level }: { level: LevelType }) => {

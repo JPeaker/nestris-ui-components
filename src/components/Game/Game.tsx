@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import { Cell, Game as GameType } from "../../../types/Game";
+import { Cell, Game as GameType } from "../../types/Game";
 import getBlockImage from "../../services/block-image-map";
-import { Orientation } from "../../../types/Piece";
+import { Orientation } from "../../types/Piece";
 import { getPieceGrid, getPiecePlacementGrid } from "../../services/piece-grid";
 import NextPiece from "./NextPiece";
 import "./Game.css";

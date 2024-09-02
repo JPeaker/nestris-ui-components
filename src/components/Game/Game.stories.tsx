@@ -1,7 +1,8 @@
+import * as React from 'react'
 import type { Meta, StoryFn } from "@storybook/react";
 import Game from "./Game";
 import sampleStack from "./sample-stack";
-import { Orientation, Tetrimino } from "../../../types/Piece";
+import { Orientation, Tetrimino } from "../../types/Piece";
 
 const meta = {
   title: "Game",

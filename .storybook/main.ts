@@ -1,26 +1,27 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from '@storybook/react-webpack5'
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    "@storybook/preset-create-react-app",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    '@storybook/addon-webpack5-compiler-swc',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@chromatic-com/storybook',
+    '@storybook/addon-interactions'
   ],
   framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
+    name: '@storybook/react-webpack5',
+    options: {}
   },
-  webpackFinal: async (config) => {
-    // do mutate the config
-    config.module?.rules?.push({
-      test: /\.tsx?$/,
-      use: "ts-loader",
-    });
-    return config;
-  },
-  // staticDirs: ["../public"],
-};
-export default config;
+  swc: () => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic'
+        }
+      }
+    }
+  }),
+}
+export default config

@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import "./Piece.css";
-import { Orientation, Tetrimino } from "../../../types/Piece";
+import { Orientation, Tetrimino } from "../../types/Piece";
 import getBlockImage from "../../services/block-image-map";
-import { Level } from "../../../types/Level";
+import { Level } from "../../types/Level";
 import { getPieceGrid } from "../../services/piece-grid";
 
 export interface PieceProps {

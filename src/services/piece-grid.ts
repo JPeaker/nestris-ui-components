@@ -1,5 +1,5 @@
-import { Orientation, Tetrimino } from "../../types/Piece";
-import { Placement } from "../../types/Placement";
+import { Orientation, Tetrimino } from "../types/Piece";
+import { Placement } from "../types/Placement";
 import blockMap from "../components/Piece/block-map";
 
 export const getPieceGrid = (

@@ -1,64 +1,48 @@
 {
   "name": "nestris-ui-components",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.106",
-    "@types/react": "^18.3.4",
-    "@types/react-dom": "^18.3.0",
-    "classnames": "^2.5.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "0.0.1",
+  "description": "A library of NES Tetris React components, used for rendering game states",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "babel --extensions .ts,.tsx --ignore '**/*.stories.tsx' ./src -d ./dist",
+    "tscheck": "tsc",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "JPeaker",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.24.8",
+    "classnames": "^2.5.1"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.7.0",
+    "@babel/core": "7.25.2",
+    "@babel/preset-env": "7.25.4",
+    "@babel/preset-react": "7.24.7",
+    "@babel/preset-typescript": "7.24.7",
+    "@chromatic-com/storybook": "^1.8.0",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
     "@storybook/blocks": "^8.2.9",
-    "@storybook/preset-create-react-app": "^8.2.9",
     "@storybook/react": "^8.2.9",
     "@storybook/react-webpack5": "^8.2.9",
     "@storybook/test": "^8.2.9",
-    "eslint-plugin-storybook": "^0.8.0",
-    "file-loader": "^6.2.0",
-    "prop-types": "^15.8.1",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "babel-loader": "9.1.3",
+    "css-loader": "7.1.2",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "5.6.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "storybook": "^8.2.9",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.94.0"
+    "style-loader": "4.0.0",
+    "typescript": "5.5.4",
+    "webpack": "5.94.0",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "5.0.4"
   }
 }

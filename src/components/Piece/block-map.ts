@@ -1,5 +1,5 @@
-import { Orientation, Tetrimino } from "../../../types/Piece";
-import { Block } from "../../../types/Block";
+import { Orientation, Tetrimino } from "../../types/Piece";
+import { Block } from "../../types/Block";
 
 const blockMap: {
   [tetrimino in Tetrimino]: {
